@@ -25,5 +25,7 @@ for tweet in tweepy.Cursor(api.user_timeline, id="iludeathmetal", tweet_mode='ex
     #no @'ing people
     if (not tweet.retweeted) and ('RT @' not in tweet.full_text):
         langdon_tweets.append(tweet.full_text)
+
+#print(langdon_generator(langdon_tweets))
 api.update_status(langdon_generator(langdon_tweets))
 
